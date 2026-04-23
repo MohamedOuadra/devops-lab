@@ -6,15 +6,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/MohamedOuadra/devops-lab.git', credentialsId: 'github-creds'
             }
         }
-        stage('Build Docker') {
+        stage('Test') {
             steps {
-                bat 'docker build -t webapp:latest .'
-            }
-        }
-        stage('Deploy Kubernetes') {
-            steps {
-                bat 'kubectl apply -f deployment.yaml'
-                bat 'kubectl apply -f service.yaml'
+                bat 'echo Jenkinsfile is working!'
             }
         }
     }
